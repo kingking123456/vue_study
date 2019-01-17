@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='roll'>滚起来</button>
+        <button @click='stop'>停止!</button>
+        <p>{{mesg}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                mesg: "让你动起来",
+                timerId:null
+            },
+            methods: {
+                roll() {
+                   clearInterval(this.timerId);
+                   this.timerId= setInterval(() => {
+                        let start = this.mesg.substr(0, 1);
+                        let end = this.mesg.substr(1);
+                        this.mesg = end + start;
+                    }, 200)
+                },
+                stop(){
+                    clearInterval(this.timerId);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
