@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/vue-router-3.0.1.js"></script>
+    <style>
+        .headerBox{
+            height: 80px;
+            background-color: blue;
+        }
+        .containerBox{
+            display: flex;
+            height: 300px;
+
+        }
+        .leftBox{
+            flex: 2;
+            background-color: blueviolet;
+        }
+        .rightBox{
+            flex: 8;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <router-view></router-view>
+        <div class="container">
+            <router-view name="left"></router-view>
+            <router-view name="right"></router-view>
+        </div>
+    </div>
+    <template id="header">
+        <div>
+            <h1 class="headerBox">这是header头部</h1>
+        </div>
+    </template>
+    <template id="left">
+        <div>
+            <h2 class="leftBox">这是left盒子</h2>
+        </div>
+    </template>
+    <template id="right">
+        <div>
+            <h2 class="rightBox">这是right盒子</h2>
+        </div>
+    </template>
+    <script>
+        var headerBox = {
+            template: "#header"
+        }
+        var leftBox = {
+            template: "#left"
+        }
+        var rightBox = {
+            template: "#right"
+        }
+        const router = new VueRouter({
+            routes: [
+                { path: "/", component: headerBox },
+                { path: "/left", component: leftBox },
+                { path: "/right", component: rightBox }
+            ]
+        })
+        new Vue({
+            el: "app",
+            data: {
+
+            },
+            router
+        })
+    </script>
+</body>
+
+</html>

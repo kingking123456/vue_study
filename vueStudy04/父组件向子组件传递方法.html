@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <com @posts="show"></com>
+    </div>
+    <template id="temp">
+        <div>
+            <h1>这是子组件里面东西</h1>
+            <input type="button" @click="btnAdd" value="点击它会把父组件里面值传递过来">
+        </div>
+    </template>
+    <script>
+        var com = {
+            template: "#temp",
+            data() {
+                return {
+                    sonMsg: { name: "小头儿子", age: 6 }
+                }
+            },
+            methods: {
+                btnAdd() {
+                    this.$emit("posts",this.sonMsg)
+                }
+            }
+
+
+        }
+        new Vue({
+            el: "#app",
+            data: {
+                dataMsgFormSon:null
+            },
+            methods:{
+                show(datas){
+                    console.log(datas)
+                    this.dataMsgFormSon=datas
+                }
+            },
+            components: {
+                com
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/vue-router-3.0.1.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/main">点击主组件哈哈</router-link>
+        <router-view></router-view>
+    </div>
+    <template id="temp1">
+        <div>
+            <h1>这是主组件main</h1>
+            <router-link to="/main/login">登录</router-link>
+            <router-link to="/main/register">注册</router-link>
+            <router-view></router-view>
+        </div>
+    </template>
+    <template id="temp2">
+        <div>
+            <h2>这是登录里面的东西</h2>
+        </div>
+    </template>
+    <template id="temp3">
+        <div>
+            <h2>这是注册里面的东西</h2>
+        </div>
+    </template>
+    <script>
+        var main = {
+            template: "#temp1",
+            data() {
+                return {
+                    msg: "这是组件里面东西"
+                }
+            }
+        }
+        const login = {
+            template: "#temp2",
+            data() {
+                return {
+                    mas: "这是登录里面东西"
+                }
+            }
+        }
+        const register = {
+            template: "#temp3",
+            data() {
+                return {
+                    mas: "这是注册里面东西"
+                }
+            }
+        }
+        const router = new VueRouter({
+            routes: [
+                {
+                    path: "/main",
+                    component: main,
+                    children:[
+                        // {path:"login",component:login},
+                        // {path:"register",component:register}
+                         {path:"/main/login",component:login},
+                         {path:"/main/register",component:register}
+                    ]
+                }
+            ]
+        })
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+            router,
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

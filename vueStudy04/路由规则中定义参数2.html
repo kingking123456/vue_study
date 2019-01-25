@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/vue-router-3.0.1.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       
+        <router-link to="/login/9/张三/?id=99&name=李四">登录</router-link>
+        <router-link to="/register">注册</router-link>
+        <router-view></router-view>
+    </div>
+    <template id="temp1">
+        <div>
+            <h1>你是登录功能哦哦！！！{{$route.params.id}}-------------{{$route.query.id}}</h1>
+        </div>
+    </template>
+    <template id="temp2">
+        <div>
+            <h1>你是注册功能哦哦！！！</h1>
+        </div>
+    </template>
+    <script>
+        var login = {
+            template: "#temp1",
+            data() {
+                return {
+                    msg: "棒棒哒宝宝"
+                }
+            },
+            created() {
+                console.log(this.$route.params)
+                console.log(this.$route.query)
+            },
+        }
+        var register = {
+            template: "#temp2",
+            data() {
+                return {
+                    msg: "嘿嘿"
+                }
+            }
+        }
+        var router = new VueRouter({
+            routes: [
+                { path: "/login/:id/:name", component: login },
+                { path: "/register", component: register }
+            ]
+        })
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+
+            },
+            router
+        })
+    </script>
+</body>
+
+</html>
