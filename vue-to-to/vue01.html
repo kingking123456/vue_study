@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        mvvm分为三个部分：分别是M ,V,VM
+        1.M:模型层，主要是负责业务数据相关
+        2.V：视图层,主要负责视图相关，细分下来就是html+css
+        3.Vm:V与Mg沟通的桥梁，负责监听M或者V的·修改，是实现MVVM双向绑定的要点
+        MVVM支持双向绑定，意思就是当M层数据进行修改时候，VM层会监听到变化，并且通知V
+        层进行相应的修改，反之修改V层则会通知M层数据进行修改，以此也实现视图与模型层的相互解耦
+
+     -->
+     <div id="app">
+         <p>{{msg}}</p>
+     </div>
+     <script>
+         let vm = new Vue({
+             el:"#app",
+             data:{
+                 msg:"hello world"
+             }
+         })
+     </script>
+
+</body>
+</html>
