@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input type="button" name="" value="a">
+        <input type="button" name="" value="b">
+        <input type="button" name="" value="c">
+        <script>
+            var btn=document.getElementsByTagName("input")
+            console.log(btn)
+            for(let i=0;i<btn.length;i++){
+                btn[i].onclick=function(){
+                    console.log(i)
+                }
+            }
+        </script>
+</body>
+</html>
