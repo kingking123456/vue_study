@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <style>
+        .header{
+            color: red;
+        }
+        .top{
+            border: 1px dashed blueviolet;
+        }
+        .active{
+            font-size: 35px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <h1 :class="['header','top',{'active':flag}]" @click="btn">今天过年</h1> -->
+        <h1 :class="['header','top',name]" @click="btn">今天过年</h1>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                // flag:false,
+                name:"active"
+            },
+            methods: {
+                btn(){
+                    //this.flag=true
+                    this.name=this.name=="active"?"":"active"
+                }
+            },
+        })
+    </script>
+</body>
+</html>

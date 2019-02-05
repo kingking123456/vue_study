@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{msg}}</h2>
+        <ul>
+            <li v-for="item in lists" :key="item.id">
+                {{item}}
+            </li>
+        </ul>
+        <input type="button" value="我是往数组里面添加数据" @click="arrBtn">
+        <div v-for="(key,val,i) in addObj">
+            {{val}}--------{{key}}-------{{i}}
+        </div>
+        <!-- <input type="text" v-model="msg"> -->
+        <input type="button" value="添加数据" @click="addBtn">
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                lists: [1, 2, 3, 4, 5],
+                addObj: {
+                    id: 1,
+                    name: "李四",
+                    age: 22
+                },
+                msg: "你好"
+            },
+            methods: {
+                arrBtn(){
+                    Vue.set(this.lists,1,99)
+                },
+                addBtn() {
+                    Vue.set(this.addObj, "sex", "女")
+                }
+            },
+        })
+    </script>
+
+
+</body>
+
+</html>

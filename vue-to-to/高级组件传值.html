@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>我是没有绑定v-bind</h2>
+        <item1 content="今天过年你好" num="好好休息"></item1>
+        <item2 :content="msg"></item2>
+    </div>
+    <template id="temp1">
+        <div>
+            <h1>我是组件1{{this.content}}-----{{this.num}}</h1>
+            
+        </div>
+    </template>
+    <template id="temp2">
+        <div>
+            <h1>我是组件2{{this.content}}</h1>
+        </div>
+    </template>
+    <script>
+        let item1 = {
+            template: "#temp1",
+            props: ["content", "num"],
+            methods: {
+
+            },
+        }
+        let item2 = {
+            template: "#temp2",
+            props:["content"],
+            methods: {
+
+            }
+        }
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "我是v-bind定值"
+            },
+            components: {
+                item1,
+                item2
+            }
+        })
+
+    </script>
+</body>
+
+</html>
