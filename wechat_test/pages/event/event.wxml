@@ -1,0 +1,2 @@
+<!--pages/event/event.wxml-->
+<button id='btn' data-id='1' bindtap='bindHadle'>按钮</button>

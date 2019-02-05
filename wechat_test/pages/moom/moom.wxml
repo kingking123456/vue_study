@@ -1,0 +1,23 @@
+<!-- <view hidden='{{!isloading}}'>
+    <text>loading...</text>
+</view>
+<view hidden='{{isloading}}'>
+  <text>load done</text>
+</view>
+
+<view wx:if='{{isloading}}'>
+  <text>加载我</text>
+</view>
+<view wx:else='{{!isloading}}'>
+  <text>亲亲你，不要隐藏我</text>
+</view> -->
+<view wx:if='{{isloading}}'>
+  <text class='heiwu'>我不要关小黑屋</text>
+</view>
+<view wx:if='{{isloading}}'>
+  <text class='heiwu'>我不要关小黑屋</text>
+</view>
+<view wx:else='{{!isloading}}'>
+  <text class='qinqin'>亲亲我哦，不要隐藏我好不好</text>
+</view>
+<navigator id='load' url='/pages/index/index'>跳转的页面</navigator>

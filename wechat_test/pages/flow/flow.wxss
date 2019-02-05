@@ -1,0 +1,7 @@
+.pop{
+  color: red;
+  margin-left: 50px;
+}
+.val{
+  border: 2px  solid purple;
+}

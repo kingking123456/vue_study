@@ -1,0 +1,17 @@
+<!--pages/each/each.wxml-->
+<!-- <text>pages/each/each.wxml</text>
+<view wx:for='{{ students}}' wx:key='aaa'>
+<text>{{index}}</text>
+<text>name:{{item.name}}</text>
+<text>age:{{item.age}}</text>
+<text>sex:{{item.sex}}</text>
+</view> -->
+<!-- <view wx:for='{{students}}' wx:key='id'>
+<checkbox></checkbox>
+  <text>{{item.name}}</text>
+</view>
+<button bindtap='addItemHadle'>add</button> -->
+<view wx:for='{{students}}' wx:key='id'>
+  <text>{{item.name}}</text>
+</view>
+<button bindtap='addItemHadle'>add</button>

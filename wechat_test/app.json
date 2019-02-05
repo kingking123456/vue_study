@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/flow/flow",
+    "pages/moom/moom",
+    "pages/each/each",
+    "pages/demo/demo",
+    "pages/event/event",
+    "pages/index/index",
+    "pages/logs/logs"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ccc",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

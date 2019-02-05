@@ -1,0 +1,27 @@
+view{
+  margin: 30px  auto;
+  width: 300px;
+  height: 20px;
+  line-height: 20px;
+  border: 2px solid rgb(48, 158, 134);
+  text-align: center;
+ border-radius: 10px;
+}
+.qinqin{
+  color: red;
+  font-size: 18px;
+  margin-left: 30px;
+}
+.heiwu{
+  color: rgb(126, 37, 228);
+  font-size: 16px;
+}
+#load{
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid paleturquoise;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto auto;
+}

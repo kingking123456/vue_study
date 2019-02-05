@@ -1,0 +1,12 @@
+input{
+  background-color: red;
+}
+#feifei{
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid purple;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto auto;
+}

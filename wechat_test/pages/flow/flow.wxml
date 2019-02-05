@@ -1,0 +1,7 @@
+<view>
+  <text class='pop'>{{fool}}</text>
+</view>
+<input value='{{fool}}' class='val' bindinput='bindInputHadle'> </input>
+
+
+

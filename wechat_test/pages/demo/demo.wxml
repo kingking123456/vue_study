@@ -1,0 +1,22 @@
+<view>
+  <text>{{name}}</text>
+</view>
+<view>
+  <input value='{{age}}'></input>
+</view>
+<view>
+<view>
+  <text>{{sex}}:你最帅</text>
+</view>
+    <text>{{1+1}}=!小胡子</text>
+</view>
+<navigator id='feifei' url='/pages/each/each'>我要飞呀</navigator>
+
+<!-- wxs标签 -->
+<wxs module='fool'>
+  module.exports = {
+    addPostfix: function(gg) {
+      retrun gg + 'wxs'
+    }
+  }
+</wxs>
