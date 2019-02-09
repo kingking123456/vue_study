@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/vue-router-3.0.1.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <router-view></router-view>
+    </div>
+    <template id="temp1">
+        <div>
+            <h1>这是列表页</h1>
+            <!-- <ul>
+                <router-link :to="`/newInfo?id=${item.id}`" v-for="item in newList " :key="item.id" tag="li">
+                    <p>标题: {{ item.title }}</p>
+                    <p>内容简介: {{ item.content }}</p>
+
+                </router-link>
+            </ul> -->
+            <ul>
+                <router-link :to="`/newInfo/${item.id}`" v-for="item in newList " :key="item.id" tag="li">
+                    <p>标题: {{ item.title }}</p>
+                    <p>内容简介: {{ item.content }}</p>
+
+                </router-link>
+            </ul>
+        </div>
+    </template>
+    <template id="temp2">
+        <div>
+            <h1>这是详情页{{$route.query.id}}------{{$route.params.id}}</h1>
+        </div>
+    </template>
+    <script>
+        let newlistComponet = {
+            template: "#temp1",
+            data() {
+                return {
+                    newList: [
+                        { id: 1, title: '巨大新闻!!!', content: '素馅熊今年十八了!成年了!三年以上了解一下!' },
+                        { id: 2, title: '特大新闻!!!', content: '肉馅熊今年二八了!还没娶老婆!' },
+                        { id: 3, title: '特大新闻!!!', content: '肉馅熊今年二八了!还没娶老婆!' },
+                        { id: 4, title: '特大新闻!!!', content: '肉馅熊今年二八了!还没娶老婆!' },
+                        { id: 5, title: '特大新闻!!!', content: '肉馅熊今年二八了!还没娶老婆!' },
+                        { id: 6, title: '特大新闻!!!', content: '肉馅熊今年二八了!还没娶老婆!' },
+                        { id: 7, title: '特大新闻!!!', content: '肉馅熊今年二八了!还没娶老婆!' },
+                    ]
+                }
+            }
+        }
+        let newInfoComponet = {
+            template: "#temp2",
+            created() {
+                console.log(this.$route)
+            },
+
+
+        }
+        let router = new VueRouter({
+            routes: [
+                { path: "/", redirect: "/newList" },
+                { path: "/newList", component: newlistComponet },
+                { path: "/newInfo/:id", component: newInfoComponet }
+            ]
+        })
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            router,
+        })
+    </script>
+</body>
+
+</html>
