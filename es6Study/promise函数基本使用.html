@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        function promiseTest() {
+            var promise = new Promise((reslove, reject) => {
+                let flag = false
+                if (!flag) return reslove()
+                reject()
+            })
+            return promise
+        }
+        promiseTest().then(res => {
+            let a = "成功回调"
+            console.log(a, 222)
+        }, err => {
+            let b = "失败回调"
+            console.log(b,3333)
+        })
+    </script>
+</body>
+
+</html>

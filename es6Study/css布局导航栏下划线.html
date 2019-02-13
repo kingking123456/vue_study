@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .nav_css {
+            list-style: none;
+            /* position: absolute; */
+            display: flex;
+        }
+
+        .nav_css li {
+            padding: 20px;
+            /* float: left; */
+            position: relative;
+            line-height: 20px;
+            text-align: center;
+            color: #000;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .nav_css li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            border-bottom: 2px solid #000;
+            transition: 0.2s all linear;
+            transition-delay: 0.1s;
+        }
+
+        .nav_css li:hover::before {
+            width: 100%;
+            left: 0;
+        }
+
+        li:hover~li::before {
+            left: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <ul class="nav_css">
+        <li>财经</li>
+        <li>军事</li>
+        <li>生活</li>
+        <li>体育</li>
+    </ul>
+</body>
+
+</html>

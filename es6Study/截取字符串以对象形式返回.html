@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+      function queryStr(url=''){
+        let arrQueryStr=url.split("?")[1]
+        if(!arrQueryStr) return 
+        let arr=arrQueryStr.split("&")
+        let result = {}
+        arr.forEach(item=>result[item.split("=")[0]]=item.split("=")[1])
+        return result
+      }
+      let resultObj=queryStr("http://www.lovegf.cn?name=zs&age=18&type=1")
+      console.log(resultObj)
+      
+    </script>
+</body>
+
+</html>

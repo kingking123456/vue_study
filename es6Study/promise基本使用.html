@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--new做几件事情
+ 1.创建一个新的空对象
+ 2.让this指向这个新的空对象
+ 3.执行这个函数中代码
+ 4.返回这个对象
+ 5.这个对象中有一个_proto_指向构造函数中原型 -->
+    <script>
+        var promise = new Promise((resolve, reject) => {
+            var flag = false
+            if (flag) return resolve()
+            reject()
+            return  promise 
+        })
+        console.log(promise)
+        promise.then(res=>{
+            var a="成功回调"
+            console.log(a,1111)
+        },err=>{
+            var b="失败回调"
+            console.log(b,2222)
+        })
+
+    </script>
+
+</body>
+
+</html>

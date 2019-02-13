@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        有这么一个需求
+        去买菜
+        回家做饭
+        开始做饭
+        做饭之后，开始吃饭
+        吃完饭之后洗碗
+         */
+         let flag = 1;
+         function step1(reslove,reject){
+             console.log("准备买菜")
+             if(flag){
+                reslove("我女朋友不挑食，什么都吃，很快就完成了买菜，嘿嘿")
+             }else{
+                 reject("超市没有女朋友喜欢吃的菜，正在做思想工作，正在沟通中。。")
+             }
+         }
+         function step2(reslove,reject){
+             console.log("准备洗菜")
+             if(flag=1){
+                reslove("洗菜比较顺利")
+                flag=0;
+             }else{
+                 reject("家里停水了，没有办法正常洗菜")
+             }
+         }
+         new Promise(step1).then(val=>{
+             console.log(val)
+             return new Promise(step2)
+         }).then(val2=>{
+             console.log(val2)
+         })
+    </script>
+</body>
+</html>
